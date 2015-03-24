@@ -47,28 +47,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        {
-          this.props.path === '/' ?
-          <div className="jumbotron">
-            <div className="container text-center">
-              <h1>React</h1>
-              <p>Complex web apps made easy</p>
-            </div>
-          </div> :
-          <div className="container">
-            <h2>{page.title}</h2>
-          </div>
-        }
         <ContentPage className="container" {...page} />
-        <div className="navbar-footer">
-          <div className="container">
-            <p className="text-muted">
-              <span>© Your Company</span>
-              <span><a href="/">Home</a></span>
-              <span><a href="/privacy">Privacy</a></span>
-            </p>
-          </div>
-        </div>
       </div>
     );
   }
