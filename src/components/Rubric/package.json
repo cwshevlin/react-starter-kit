@@ -1,0 +1,6 @@
+{
+  "name": "Rubric",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Rubric.js"
+}

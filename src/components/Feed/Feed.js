@@ -1,13 +1,14 @@
 'use strict';
 
 import React from 'react';
+import Post from '../Post';
 
 export default class Feed extends React.Component {
 	render() {
 		console.log("updating feed");
 		var feedNodes = this.props.posts.map(function(post, index){
 			return (
-				<Post author={post.author} key={index} comments={post.comments}/>
+				<Post student={post.student} key={index} rubric={post.rubric} comments={post.comments}/>
 				);
 		});
 		return (
@@ -17,7 +18,6 @@ export default class Feed extends React.Component {
 		);
 	}
 }
-
 
 Feed.propTypes = {
   body: React.PropTypes.string.isRequired

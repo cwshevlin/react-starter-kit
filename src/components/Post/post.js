@@ -1,29 +1,29 @@
 'use strict';
 
 import React from 'react';
+import Rubric from '../Rubric';
+import CommentsBox from '../CommentsBox';
 
-export default class Feed extends React.Component {
 
+export default class Post extends React.Component {
 	render(){
 		return (
 			<div className="post">
 			<div className="avatar"></div>
 			<h5 className="author">
-				{this.props.author}
+				{this.props.student}
 			</h5>
 			<div className="media">
 			</div>
-			<PostRubric/>
-			<PostCommentList data={this.props.comments}/>
+			<Rubric rubric={this.props.rubric}/>
+			<CommentsBox comments={this.props.comments}/>
 			<div className="commentButton"><h5>Comment</h5></div>
 			<div className="moreOptions">• • •</div>
 			</div>
 		);
 	}
-
 }
 
-
-Feed.propTypes = {
+Post.propTypes = {
   body: React.PropTypes.string.isRequired
 };

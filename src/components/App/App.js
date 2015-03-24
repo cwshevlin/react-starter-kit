@@ -16,6 +16,7 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
 import Feed from '../Feed';
+import Post from '../Post';
 import NotFoundPage from '../NotFoundPage';
 
 export default class App extends React.Component {
@@ -111,17 +112,40 @@ export default class App extends React.Component {
   }
 }
 
-var POSTS = [
-  {
-    "author": "John Lennon",
-    "media": "images/IMG_2329.jpg",
-    "comments": [
-        {
-          "author":"John Lennon",
-          "text": "Here's my project!"
-        }
-      ]
-  }
+var POSTS =
+  [{"id":1,
+  "student":{
+    "id":2,
+    "first_name":"Hettie",
+    "last_name":"Metz"},
+  "rubric":{
+    "title":"Heart Diagram Rubric",
+    "id":1,
+    "components":[{
+      "title":"Arteries",
+      "id":1,
+      "below_description":"Arteries are not present or barely present",
+      "approaching_description":"Arteries are present, but may be connected incorrectly",
+      "meets_description":"Arteries are present and connected correctly",
+      "exceeds_description":"Arteries are connected correctly, and presented in a clear way that's easy to understand.",
+      "points":null},
+      {"title":"Veins",
+      "id":2,
+      "below_description":"Veins are not present or barely present",
+      "approaching_description":"Veins are present, but may be connected incorrectly",
+      "meets_description":"Veins are present and connected correctly",
+      "exceeds_description":"Veins are connected correctly, and presented in a clear way that's easy to understand.",
+      "points":null},
+      {"title":"Scientific Understanding",
+      "id":3,"below_description":"Student does not demonstrate strong understanding of the material.",
+      "approaching_description":"Student is approaching mastery of the material, but still lacks some key understandings",
+      "meets_description":"Student has mastered the material","exceeds_description":"Student has exceeded expected mastery of the material.",
+      "points":null}]},
+  "comments":[{
+    "id":1,
+    "author_first_name":"Hettie",
+    "author_last_name":"Metz",
+    "text":"Here's my work from class today!"}]}
 ];
 
 App.propTypes = {
