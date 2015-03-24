@@ -47,7 +47,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <ContentPage className="container" {...page} />
+        <Feed className="feed" {...page} />
       </div>
     );
   }
