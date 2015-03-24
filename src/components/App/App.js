@@ -15,7 +15,7 @@ import invariant from 'react/lib/invariant';
 import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
-import ContentPage from '../ContentPage';
+import Feed from '../Feed';
 import NotFoundPage from '../NotFoundPage';
 
 export default class App extends React.Component {
@@ -34,23 +34,6 @@ export default class App extends React.Component {
     return this.props.path !== nextProps.path;
   }
 
-  render() {
-    var page = AppStore.getPage(this.props.path);
-    invariant(page !== undefined, 'Failed to load page content.');
-    this.props.onSetTitle(page.title);
-
-    if (page.type === 'notfound') {
-      this.props.onPageNotFound();
-      return React.createElement(NotFoundPage, page);
-    }
-
-    return (
-      <div className="App">
-        <Navbar />
-        <Feed className="feed" {...page} />
-      </div>
-    );
-  }
 
   handlePopState(event) {
     AppActions.navigateTo(window.location.pathname, {replace: !!event.state});
@@ -109,7 +92,37 @@ export default class App extends React.Component {
     });
   }
 
+  render() {
+    var page = AppStore.getPage(this.props.path);
+    invariant(page !== undefined, 'Failed to load page content.');
+    this.props.onSetTitle(page.title);
+
+    if (page.type === 'notfound') {
+      this.props.onPageNotFound();
+      return React.createElement(NotFoundPage, page);
+    }
+
+    return (
+      <div className="App">
+        <Navbar />
+        <Feed className="feed" posts={POSTS} {...page} />
+      </div>
+    );
+  }
 }
+
+var POSTS = [
+  {
+    "author": "John Lennon",
+    "media": "images/IMG_2329.jpg",
+    "comments": [
+        {
+          "author":"John Lennon",
+          "text": "Here's my project!"
+        }
+      ]
+  }
+];
 
 App.propTypes = {
   path: React.PropTypes.string.isRequired,

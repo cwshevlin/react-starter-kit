@@ -3,11 +3,11 @@
 import React from 'react';
 
 export default class Feed extends React.Component {
-  render() {
+	render() {
 		console.log("updating feed");
-		var feedNodes = this.props.data.map(function(post, index){
+		var feedNodes = this.props.posts.map(function(post, index){
 			return (
-				<Post url="posts.json" author={post.author} key={index} comments={post.comments}/>
+				<Post author={post.author} key={index} comments={post.comments}/>
 				);
 		});
 		return (
@@ -17,6 +17,7 @@ export default class Feed extends React.Component {
 		);
 	}
 }
+
 
 Feed.propTypes = {
   body: React.PropTypes.string.isRequired
