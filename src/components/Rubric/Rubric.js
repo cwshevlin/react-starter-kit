@@ -1,23 +1,24 @@
 'use strict';
 
 import React from 'react';
+import RubricCategory from '../RubricCategory';
 
 export default class Rubric extends React.Component {
 	render(){
-		var components = this.props.rubric.components.map(function(component, index){
+		var categories = this.props.rubric.components.map(function(category, index){
 		return (
-			<Component className="component"
-				title={component.title} 
-				belowDescription={component.below_description}
-				approachingDescription={component.approaching_description}
-				meetsDescription={component.meets_description}
-				exceedsDescription={component.exceeds_description}
-				points={component.points} />
+			<RubricCategory className="category"
+				title={category.title} 
+				belowDescription={category.below_description}
+				approachingDescription={category.approaching_description}
+				meetsDescription={category.meets_description}
+				exceedsDescription={category.exceeds_description}
+				points={category.points} />
 				);
 		});
 		return (
 			<div className="rubric">
-				{components}
+				{categories}
 			</div>
 			);
 	}
