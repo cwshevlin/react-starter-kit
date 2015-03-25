@@ -1,24 +1,23 @@
 'use strict';
 
 import React from 'react';
-import Comment from '../Comment';
 
-export default class Feed extends React.Component {
+export default class Comment extends React.Component {
 	render() {
-		console.log("updating feed");
-		var feedNodes = this.props.posts.map(function(post, index){
-			return (
-				<Post student={post.student} key={index} rubric={post.rubric} comments={post.comments}/>
-				);
-		});
 		return (
-			<div className="feed">
-				{feedNodes}
+			<div className="comment">
+				<h6 className="commentAuthor">
+					{this.props.author_first_name + " "}
+					{this.props.author_last_name}
+				</h6>
+				<p>
+					{this.props.text}
+				</p>
 			</div>
 		);
 	}
 }
 
-Feed.propTypes = {
+Comment.propTypes = {
   body: React.PropTypes.string.isRequired
 };

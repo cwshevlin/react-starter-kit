@@ -11,7 +11,8 @@ export default class Post extends React.Component {
 			<div className="post">
 			<div className="avatar"></div>
 			<h5 className="author">
-				{this.props.student}
+				{this.props.student.first_name + " "} 
+				{this.props.student.last_name}
 			</h5>
 			<div className="media">
 			</div>

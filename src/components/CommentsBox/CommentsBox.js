@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Comment from '../Comment';
 
 export default class CommentsBox extends React.Component {
 	render(){
