@@ -17,7 +17,3 @@ export default class Comment extends React.Component {
 		);
 	}
 }
-
-Comment.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

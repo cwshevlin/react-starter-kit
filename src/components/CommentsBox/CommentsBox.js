@@ -17,7 +17,3 @@ export default class CommentsBox extends React.Component {
 		);
 	}
 }
-
-CommentsBox.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

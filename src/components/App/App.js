@@ -105,8 +105,8 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar />
-        <Feed className="feed" posts={POSTS} {...page} />
+        <Navbar className="NavBar" />
+        <Feed className="Feed" posts={POSTS} {...page} />
       </div>
     );
   }

@@ -22,7 +22,3 @@ export default class RubricCategory extends React.Component {
 		);
 	}
 }
-
-RubricCategory.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

@@ -24,7 +24,3 @@ export default class Post extends React.Component {
 		);
 	}
 }
-
-Post.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

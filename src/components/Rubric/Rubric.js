@@ -13,7 +13,8 @@ export default class Rubric extends React.Component {
 				approachingDescription={category.approaching_description}
 				meetsDescription={category.meets_description}
 				exceedsDescription={category.exceeds_description}
-				points={category.points} />
+				points={category.points}
+				key={index} />
 				);
 		});
 		return (
@@ -24,6 +25,3 @@ export default class Rubric extends React.Component {
 	}
 }
 
-Rubric.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

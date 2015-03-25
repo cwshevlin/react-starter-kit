@@ -18,7 +18,3 @@ export default class Feed extends React.Component {
 		);
 	}
 }
-
-Feed.propTypes = {
-  body: React.PropTypes.string.isRequired
-};

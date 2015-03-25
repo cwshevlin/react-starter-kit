@@ -22,7 +22,3 @@ export default class ContentPage extends React.Component {
   }
 
 }
-
-ContentPage.propTypes = {
-  body: React.PropTypes.string.isRequired
-};
