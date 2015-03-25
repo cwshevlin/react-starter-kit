@@ -17,6 +17,7 @@ import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
 import Feed from '../Feed';
 import Post from '../Post';
+import RaisedHandsBox from '../RaisedHandsBox';
 import NotFoundPage from '../NotFoundPage';
 
 export default class App extends React.Component {
@@ -107,6 +108,7 @@ export default class App extends React.Component {
       <div className="App">
         <Navbar className="NavBar" />
         <Feed className="Feed" posts={POSTS} {...page} />
+        <RaisedHandsBox raisedHands={RAISEDHANDS} />
       </div>
     );
   }
@@ -120,13 +122,134 @@ App.propTypes = {
   onPageNotFound: React.PropTypes.func.isRequired
 };
 
+var RAISEDHANDS = [
+  {
+    "id":1,
+    "question":"Hey I still don't understand what the carotid artery does?",
+    "student":{
+      "id":1,
+      "first_name":"Colin",
+      "last_name":"Shevlin"
+    },
+    "comments":[
+      {
+        "id":1,
+        "student":{
+          "id":2,
+          "first_name":"Julia",
+          "last_name":"Hand"
+        },
+        "text":"The Carotid is the largest artery and carries blood to the brain. Its vein is the jugular, so it's huge."
+      },
+      {
+        "id":1,
+        "student":{
+          "id":8,
+          "first_name":"Reginald",
+          "last_name":"Klein"
+        },
+        "text":"It carries blood from the heart to the brain. "
+      }
+
+    ]
+  },
+  {
+    "id":2,
+    "question":"How come when I bleed I bleed red? Does the oxygen really get in my blood that quickly?",
+    "student":{
+      "id":8,
+      "first_name":"Reginald",
+      "last_name":"Klein"
+    },
+    "comments":[
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Elva",
+          "last_name":"Franecki"
+        },
+        "text":"I think it does make it all the time, but I think our body absorbs the excess blood cells back into the bone marrow. They kind of mention it on page 268."
+      },
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Mikaila",
+          "last_name":"Waters"
+        },
+        "text":"That's an interesting question! I would guess they do but I'm not sure."
+      }
+
+    ]
+  },
+  {
+    "id":3,
+    "question":"How does our bone marrow know when to make blood? Does it make it all the time? If so, why don't we explode?",
+    "student":{
+      "id":2,
+      "first_name":"Julia",
+      "last_name":"Hand"
+    },
+    "comments":[
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Elva",
+          "last_name":"Franecki"
+        },
+        "text":"I think it does make it all the time, but I think our body absorbs the excess blood cells back into the bone marrow. They kind of mention it on page 268."
+      },
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Mikaila",
+          "last_name":"Waters"
+        },
+        "text":"That's an interesting question! I would guess they do but I'm not sure."
+      }
+    ]
+  },
+  {
+    "id":4,
+    "question":"How is our blood different from animal blood?",
+    "student":{
+      "id":1,
+      "first_name":"Colin",
+      "last_name":"Shevlin"
+    },
+    "comments":[
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Elva",
+          "last_name":"Franecki"
+        },
+        "text":"I think it does make it all the time, but I think our body absorbs the excess blood cells back into the bone marrow. They kind of mention it on page 268."
+      },
+      {
+        "id":2,
+        "student":{
+          "id":3,
+          "first_name":"Mikaila",
+          "last_name":"Waters"
+        },
+        "text":"That's an interesting question! I would guess they do but I'm not sure."
+      }
+    ]
+  }
+]
+
 var POSTS = [
   {
     "id":1,
     "student":{
       "id":2,
-      "first_name":"Hettie",
-      "last_name":"Metz"
+      "first_name":"Julia",
+      "last_name":"Hand"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -164,9 +287,12 @@ var POSTS = [
     "comments":[
       {
         "id":1,
-        "author_first_name":"Hettie",
-        "author_last_name":"Metz",
-        "text":"Here's my work from class today!"
+        "student":{
+          "id":2,
+          "first_name":"Julia",
+          "last_name":"Hand"
+        },
+        "text":"Hope this is right! :)"
       }
     ]
   },
@@ -174,8 +300,8 @@ var POSTS = [
     "id":2,
     "student":{
       "id":3,
-      "first_name":"Lera",
-      "last_name":"Okuneva"
+      "first_name":"Elva",
+      "last_name":"Franecki"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -213,9 +339,12 @@ var POSTS = [
     "comments":[
       {
         "id":2,
-        "author_first_name":"Lera",
-        "author_last_name":"Okuneva",
-        "text":"Here you go!"
+        "student":{
+          "id":3,
+          "first_name":"Elva",
+          "last_name":"Franecki"
+        },
+        "text":"Hope this is right! :)"
       }
     ]
   },
@@ -223,8 +352,8 @@ var POSTS = [
     "id":3,
     "student":{
       "id":4,
-      "first_name":"Pauline",
-      "last_name":"Murazik"
+      "first_name":"Alexa",
+      "last_name":"Windler"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -262,9 +391,12 @@ var POSTS = [
     "comments":[
       {
         "id":3,
-        "author_first_name":"Pauline",
-        "author_last_name":"Murazik",
-        "text":"Here you go!"
+        "student":{
+          "id":4,
+          "first_name":"Alexa",
+          "last_name":"Windler"
+        },
+        "text":"Here's my work from class today!"
       }
     ]
   },
@@ -272,8 +404,8 @@ var POSTS = [
     "id":4,
     "student":{
       "id":5,
-      "first_name":"Christelle",
-      "last_name":"Hartmann"
+      "first_name":"Abbie",
+      "last_name":"Wiegand"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -311,9 +443,12 @@ var POSTS = [
     "comments":[
       {
         "id":4,
-        "author_first_name":"Christelle",
-        "author_last_name":"Hartmann",
-        "text":"I heart this project."
+        "student":{
+          "id":5,
+          "first_name":"Abbie",
+          "last_name":"Wiegand"
+        },
+        "text":"Hey this is what I have so far. Is this ok?"
       }
     ]
   },
@@ -321,8 +456,8 @@ var POSTS = [
     "id":5,
     "student":{
       "id":6,
-      "first_name":"Ismael",
-      "last_name":"Crist"
+      "first_name":"Adolph",
+      "last_name":"Ratke"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -360,9 +495,12 @@ var POSTS = [
     "comments":[
       {
         "id":5,
-        "author_first_name":"Ismael",
-        "author_last_name":"Crist",
-        "text":"I heart this project."
+        "student":{
+          "id":6,
+          "first_name":"Adolph",
+          "last_name":"Ratke"
+        },
+        "text":"Hey this is what I have so far. Is this ok?"
       }
     ]
   },
@@ -370,8 +508,8 @@ var POSTS = [
     "id":6,
     "student":{
       "id":7,
-      "first_name":"Lew",
-      "last_name":"Will"
+      "first_name":"Milo",
+      "last_name":"Feeney"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -409,9 +547,12 @@ var POSTS = [
     "comments":[
       {
         "id":6,
-        "author_first_name":"Lew",
-        "author_last_name":"Will",
-        "text":"I heart this project."
+        "student":{
+          "id":7,
+          "first_name":"Milo",
+          "last_name":"Feeney"
+        },
+        "text":"Hope this is right! :)"
       }
     ]
   },
@@ -419,8 +560,8 @@ var POSTS = [
     "id":7,
     "student":{
       "id":8,
-      "first_name":"Raegan",
-      "last_name":"O'Hara"
+      "first_name":"Reginald",
+      "last_name":"Klein"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -458,9 +599,12 @@ var POSTS = [
     "comments":[
       {
         "id":7,
-        "author_first_name":"Raegan",
-        "author_last_name":"O'Hara",
-        "text":"Hope this is right! :)"
+        "student":{
+          "id":8,
+          "first_name":"Reginald",
+          "last_name":"Klein"
+        },
+        "text":"Here you go!"
       }
     ]
   },
@@ -468,8 +612,8 @@ var POSTS = [
     "id":8,
     "student":{
       "id":9,
-      "first_name":"Pietro",
-      "last_name":"Thiel"
+      "first_name":"Myrtis",
+      "last_name":"Wyman"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -507,9 +651,12 @@ var POSTS = [
     "comments":[
       {
         "id":8,
-        "author_first_name":"Pietro",
-        "author_last_name":"Thiel",
-        "text":"That was easy! Can I do another project?"
+        "student":{
+          "id":9,
+          "first_name":"Myrtis",
+          "last_name":"Wyman"
+        },
+        "text":"Here's my diagram!"
       }
     ]
   },
@@ -517,8 +664,8 @@ var POSTS = [
     "id":9,
     "student":{
       "id":10,
-      "first_name":"Eula",
-      "last_name":"Lowe"
+      "first_name":"Bernardo",
+      "last_name":"Little"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -556,9 +703,12 @@ var POSTS = [
     "comments":[
       {
         "id":9,
-        "author_first_name":"Eula",
-        "author_last_name":"Lowe",
-        "text":"Hey this is what I have so far. Is this ok?"
+        "student":{
+          "id":10,
+          "first_name":"Bernardo",
+          "last_name":"Little"
+        },
+        "text":"Here's my work from class today!"
       }
     ]
   },
@@ -566,8 +716,8 @@ var POSTS = [
     "id":10,
     "student":{
       "id":11,
-      "first_name":"Margarett",
-      "last_name":"Veum"
+      "first_name":"Cristian",
+      "last_name":"Huels"
     },
     "rubric":{
       "title":"Heart Diagram Rubric",
@@ -605,8 +755,11 @@ var POSTS = [
     "comments":[
       {
         "id":10,
-        "author_first_name":"Margarett",
-        "author_last_name":"Veum",
+        "student":{
+          "id":11,
+          "first_name":"Cristian",
+          "last_name":"Huels"
+        },
         "text":"I heart this project."
       }
     ]

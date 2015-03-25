@@ -17,6 +17,7 @@ export default class Post extends React.Component {
 			<div className="media">
 			</div>
 			<Rubric rubric={this.props.rubric}/>
+			{console.log(this.props.comments)}
 			<CommentsBox comments={this.props.comments}/>
 			<div className="commentButton"><h5>Comment</h5></div>
 			<div className="moreOptions">• • •</div>
