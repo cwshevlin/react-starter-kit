@@ -52,3 +52,159 @@
 // Utility classes
 @import "utilities.less";
 @import "../../node_modules/bootstrap/less/responsive-utilities.less";
+
+nav {
+    background-color: rgba(238,238,238,0.95);
+    color: black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: .5em 0em 0em .4em;
+    font-family: "Raleway", "Century Gothic", sans-serif;
+    z-index: 1;
+    height: 2em;
+    box-shadow: 0px 1px 1px #666;
+    #navBarTitle {
+			display: inline-block;
+			margin: 0 auto;
+			text-align: center;
+			width: 87%;
+		}
+		#raisedHandsIcon {
+			display: inline-block;
+			float: right;
+			margin-right: 5px;
+			color: #333;
+		}
+}
+#content {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    padding-top: 2.7em;
+}
+.avatar {
+    width: 2em;
+    height: 2em;
+    background: #666;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    display: inline-block;
+    line-height: 1em;
+    margin-left: .5em;
+}
+.author {
+    display: inline-block;
+    line-height: 1em;
+    padding-left: .5em;
+    padding-bottom: 1em;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+.commentAuthor {
+    display: inline-block;
+    line-height: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+p {
+    margin: 0;
+}
+.feed {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.post {
+    text-align: left;
+    margin-bottom: 2em;
+}
+.media {
+    margin: 0 auto;
+    background-color: #aaa;
+    width: 100vw;
+    height: 100vw;
+}
+.rubric {
+    box-shadow: 0px 1px #aaa;
+    background-color: #eee;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 2vw;
+    width: 96vw;
+    clear: right;
+    h6 {
+        margin: .5em;
+        display: inline;
+        font-size: 1em;
+        font-weight: normal;
+    }
+}
+.downArrow {
+    padding-right: .5em;
+    display: inline;
+    font-size: 1em;
+    font-weight: normal;
+    float: right;
+    margin: 0;
+}
+.rubricComponentTitle {
+    display: block;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    h6 {
+        display: inline;
+        color: #666;
+    }
+}
+.componentDescription {
+    display: inline-block;
+    width: 22vw;
+    height: 22vw;
+    font-size: .5em;
+    padding: 1vw;
+    vertical-align: text-top;
+    h5 {
+        display: inline;
+        font-size: 2em;
+        margin-right: 5px;
+    }
+    p {
+        display: inline;
+    }
+}
+.selected {
+    background-color: #aaa;
+}
+.commentList {
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-bottom: 1em;
+}
+.comment {
+    margin-top: 1em;
+}
+.commentButton, .moreOptions {
+    padding: .4em;
+    background-color: #333;
+    color: white;
+    border-radius: 3px;
+    display: inline;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.moreOptions {
+    float: right;
+}
+.commentButton {
+    h5 {
+        display: inline;
+        font-weight: normal;
+        font-size: 1em;
+    }
+}

@@ -14,13 +14,11 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-      <div className="navbar navbar-fixed-top" role="navigation">
-        <div className="container">
-            <span className="glyphicon glyphicon-menu-hamburger navbar-left"></span>
-            <span>Gradeable</span>
-            <a href="/raised-hands"><span className="glyphicon glyphicon-comment navbar-right"></span></a>
-        </div>
-      </div>
+      <nav>
+        <span className="glyphicon glyphicon-menu-hamburger navbar-left"></span>
+        <span id="navBarTitle">Gradeable</span>
+        <a href="/raised-hands"><span id="raisedHandsIcon" className="glyphicon glyphicon-comment"></span></a>
+      </nav>
     );
   }
 
