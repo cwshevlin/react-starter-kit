@@ -16,7 +16,7 @@ export default class Navbar extends React.Component {
     return (
       <nav>
         <span className="glyphicon glyphicon-menu-hamburger navbar-left"></span>
-        <span id="navBarTitle">Gradeable</span>
+        <span id="navBarTitle">Loop</span>
         <a href="/raised-hands"><span id="raisedHandsIcon" className="glyphicon glyphicon-comment"></span></a>
       </nav>
     );
