@@ -1,6 +1,8 @@
-'use strict';
+var React = require('react');
+// var SnapJS = require('snapjs');
+// var $ = require('jquery');
 
-import React from 'react';
+module.exports = {};
 
 module.exports.Layout = React.createClass({
 
@@ -68,7 +70,7 @@ module.exports.Toggler = React.createClass({
 
   render: function(){
     var role = this.props.side == 'left' ?  'left-drawer-toggle' : 'right-drawer-toggle';
-    return this.transferPropsTo(<span role={role}>{this.props.children}</span>);
+    return (<span role={role}>{this.props.children}</span>);
   }
 });
 
