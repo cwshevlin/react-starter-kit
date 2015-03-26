@@ -1,0 +1,6 @@
+{
+  "name": "Snap",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Snap.js"
+}

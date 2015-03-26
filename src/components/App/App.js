@@ -19,6 +19,7 @@ import Feed from '../Feed';
 import Post from '../Post';
 import RaisedHandsBox from '../RaisedHandsBox';
 import NotFoundPage from '../NotFoundPage';
+import Snap from '../Snap';
 
 export default class App extends React.Component {
 
@@ -106,10 +107,29 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar className="NavBar"/>
-        {console.log("yo" + this.props.path)}
-        <Feed className="Feed" posts={POSTS} {...page} />
-        <RaisedHandsBox raisedHands={RAISEDHANDS} />
+        <Snap.Layout>
+          <Snap.Drawers>
+            <Snap.Left>
+            <ul id="hamburgerList">
+              <li>Home</li>
+              <li>Progress</li>
+              <li>Assignments</li>
+              <li>Students</li>
+            </ul>
+            </Snap.Left>
+          </Snap.Drawers>
+          <Snap.Content>
+            <nav>
+              <Snap.Toggler side="left">
+              <span className="glyphicon glyphicon-menu-hamburger navbar-left"></span>
+              </Snap.Toggler>
+              <span id="navBarTitle">Loop</span>
+              <a href="/raised-hands"><span id="raisedHandsIcon" className="glyphicon glyphicon-comment"></span></a>
+            </nav>
+            <Feed className="Feed" posts={POSTS} {...page} />
+            <RaisedHandsBox raisedHands={RAISEDHANDS} />
+          </Snap.Content>
+        </Snap.Layout>
       </div>
     );
   }

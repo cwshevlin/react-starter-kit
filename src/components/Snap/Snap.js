@@ -2,79 +2,80 @@
 
 import React from 'react';
 
-export default class Layout extends React.Component {
+module.exports.Layout = React.createClass({
 
-  render(){
+  render: function(){
     return (
       <div>{this.props.children}</div>
     );
   }
 
-}
+});
 
-export default class Drawers extends React.Component {
+
+module.exports.Drawers = React.createClass({
 
   statics: {
-    identity(){
+    identity: function(){
       return 'Drawers'
     }
   },
   
-  render(){
+  render: function(){
     return (
       <div className="snap-drawers">
       {this.props.children}
       </div>
     );
   }
-}
+});
 
-export default class Left extends React.Component {
+module.exports.Left = React.createClass({
   statics: {
-    identity(){
+    identity: function(){
       return 'Drawers.Left';
     }
   },
-  render(){
+  render: function(){
     return (
       <div ref="left" className="snap-drawer snap-drawer-left">
       {this.props.children}
       </div>
     );
   }
-}
+});
 
-export default class Right extends React.Component {
+module.exports.Right = React.createClass({
   statics: {
-    identity(){
+    identity: function(){
       return 'Drawers.Right';
     }
   },
-  render(){
+  render: function(){
     return (
       <div ref="right" className="snap-drawer snap-drawer-right">
       {this.props.children}
       </div>
     );
   }
-}
+});
 
-export default class Toggler extends React.Component {
+module.exports.Toggler = React.createClass({
   
   propTypes: {
     side: React.PropTypes.oneOf(['left', 'right']).isRequired
   },
 
-  render(){
+  render: function(){
     var role = this.props.side == 'left' ?  'left-drawer-toggle' : 'right-drawer-toggle';
     return this.transferPropsTo(<span role={role}>{this.props.children}</span>);
   }
-}
+});
 
 
-export default class Content extends React.Component {
+module.exports.Content = React.createClass({
 
-  toggleNav(side){
+  toggleNav: function(side){
     var state = this.snapper.state();
     if( state.state != 'closed' ){
       this.snapper.close();
@@ -87,11 +88,11 @@ export default class Content extends React.Component {
     this.snapper.open('right');
   },
 
-  hideNav(){
+  hideNav: function(){
     this.snapper.close();
   },
 
-  componentDidMount(){
+  componentDidMount: function(){
     this.leftToggler = $('[role="left-drawer-toggle"]');
     if( this.leftToggler.length ){
       this.leftToggler.on('click', this.toggleNav.bind(this, 'left'));
@@ -105,12 +106,12 @@ export default class Content extends React.Component {
     this.snapper = new SnapJS({
      element: this.refs.content.getDOMNode(),
      flickThreshold: 50,
-     disable: 'right',
+     //disable: 'right',
      easing: 'cubic-bezier(.55,0,.1,1)',
    });
   },
 
-  componentWillUnmount(){
+  componentWillUnmount: function(){
     if( this.leftToggler.length ){
       this.leftToggler.off('click');
     }
@@ -120,11 +121,12 @@ export default class Content extends React.Component {
     this.drawerLinks.off('click');
   },
 
-  render(){
+  render: function(){
     return (
       <div ref="content" className="snap-content">
       {this.props.children}
       </div>
     );
   }
-}
+
+});
