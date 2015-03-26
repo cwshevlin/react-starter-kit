@@ -105,8 +105,9 @@ export default class App extends React.Component {
     }
 
     return (
-      <div className="App">
-        <Navbar className="NavBar" />
+      <div className="App container">
+        <Navbar className="NavBar"/>
+        {console.log("yo" + this.props.path)}
         <Feed className="Feed" posts={POSTS} {...page} />
         <RaisedHandsBox raisedHands={RAISEDHANDS} />
       </div>

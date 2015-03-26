@@ -12,7 +12,7 @@ export default class Feed extends React.Component {
 				);
 		});
 		return (
-			<div className="feed">
+			<div className="Feed">
 				{feedNodes}
 			</div>
 		);

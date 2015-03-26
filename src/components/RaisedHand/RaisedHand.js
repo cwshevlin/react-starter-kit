@@ -15,8 +15,6 @@ export default class RaisedHand extends React.Component {
 					{this.props.question}
 				</p>
 				<CommentsBox comments={this.props.comments}/>
-				{console.log(this.props.comments)}
-				
 			</div>
 		);
 		}
